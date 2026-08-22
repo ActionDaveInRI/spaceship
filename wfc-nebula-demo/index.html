@@ -57,7 +57,7 @@
 <script>
 (function(){
  var boot=document.getElementById("boot");
- var files=["part1.js","part2.js","part3.js"];
+ var files=["part1.js","part2.js","part3.js","part4.js","part5.js","part6.js"];
  Promise.all(files.map(function(url){return fetch(url,{cache:"no-store"}).then(function(r){if(!r.ok)throw new Error(url+" "+r.status);return r.text()})})).then(function(parts){new Function(parts.join(""))()}).catch(function(err){boot.style.display="block";boot.textContent="Load error: "+err.message});
 })();
 </script>
